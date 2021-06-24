@@ -306,6 +306,8 @@ public class XdocParser
         else if ( parser.getName().equals( SUBSECTION_TAG.toString() ) )
         {
             consecutiveSections( Sink.SECTION_LEVEL_1, sink );
+
+            // sink.section2_() not necessary
         }
         else if ( !baseEndTag( parser, sink ) )
         {

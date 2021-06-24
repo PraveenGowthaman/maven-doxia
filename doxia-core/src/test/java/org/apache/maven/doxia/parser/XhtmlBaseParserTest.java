@@ -76,7 +76,7 @@ public class XhtmlBaseParserTest
     public void testHeadingEventsList()
         throws Exception
     {
-        String text = "<p><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6><h2></h2></p>";
+        String text = "<p><h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h1></h1></p>";
 
         parser.parse( text, sink );
 
@@ -118,7 +118,7 @@ public class XhtmlBaseParserTest
         throws Exception
     {
         // DOXIA-241
-        String text = "<p><h2></h2><h6></h6><h3></h3></p>";
+        String text = "<p><h1></h1><h5></h5><h2></h2></p>";
 
         parser.parse( text, sink );
 
@@ -376,7 +376,7 @@ public class XhtmlBaseParserTest
         throws Exception
     {
         final String text = "<!DOCTYPE test [<!ENTITY flo \"&#x159;\"><!ENTITY tritPos \"&#x1d7ed;\"><!ENTITY fo \"&#65;\"><!ENTITY myCustom \"&fo;\">]>"
-                + "<body><h2>&amp;&flo;&#x159;&tritPos;&#x1d7ed;</h2><p>&amp;&flo;&#x159;&tritPos;&#x1d7ed;&myCustom;</p></body>";
+                + "<body><h1>&amp;&flo;&#x159;&tritPos;&#x1d7ed;</h1><p>&amp;&flo;&#x159;&tritPos;&#x1d7ed;&myCustom;</p></body>";
 
         parser.setValidate( false );
         parser.parse( text, sink );
@@ -442,7 +442,7 @@ public class XhtmlBaseParserTest
     public void testXhtmlEntities()
         throws Exception
     {
-        final String text = "<body><h2>&laquo;&reg;</h2><p>&ldquo;&rsquo;&Phi;&larr;</p></body>";
+        final String text = "<body><h1>&laquo;&reg;</h1><p>&ldquo;&rsquo;&Phi;&larr;</p></body>";
 
         parser.parse( text, sink );
 
@@ -736,7 +736,7 @@ public class XhtmlBaseParserTest
         // ampersand should be un-escaped
         assertEquals( "http://ex.com/ex.jpg?v=l&l=e", attribs.getAttribute( "src" ) );
     }
-    
+
     public void testUnbalancedDefinitionListItem() throws Exception
     {
         String text = "<body><dl><dt>key</dt><dd>value</dd></dl>" +

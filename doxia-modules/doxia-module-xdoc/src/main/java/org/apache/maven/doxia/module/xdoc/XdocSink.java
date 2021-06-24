@@ -338,15 +338,15 @@ public class XdocSink
 
         if ( depth == SECTION_LEVEL_3 )
         {
-            writeStartTag( H4, atts );
+            writeStartTag( H3, atts );
         }
         else if ( depth == SECTION_LEVEL_4 )
         {
-            writeStartTag( H5, atts );
+            writeStartTag( H4, atts );
         }
         else if ( depth == SECTION_LEVEL_5 )
         {
-            writeStartTag( H6, atts );
+            writeStartTag( H5, atts );
         }
     }
 
@@ -366,15 +366,15 @@ public class XdocSink
         }
         else if ( depth == SECTION_LEVEL_3 )
         {
-            writeEndTag( H4 );
+            writeEndTag( H3 );
         }
         else if ( depth == SECTION_LEVEL_4 )
         {
-            writeEndTag( H5 );
+            writeEndTag( H4 );
         }
         else if ( depth == SECTION_LEVEL_5 )
         {
-            writeEndTag( H6 );
+            writeEndTag( H5 );
         }
     }
 
